@@ -1,0 +1,25 @@
+<div class="menu-header">
+  <h2> Data &amp; Analytics </h2>
+</div>
+
+<ul>
+  <li *ngFor="let menu of dataMenu" [class.active]="selectedMenu === menu.name" (click)="onMenuClick(menu)">
+    <a routerLink="{{ menu.url }}">
+      <span><img src="../../assets/images/icons/{{ menu.icon }}" class="menu-icon"/></span>
+      {{ menu.name }}
+    </a>
+  </li>
+</ul>
+
+<div class="menu-header">
+  <h2> Push Notifications </h2>
+</div>
+
+<ul>
+    <li *ngFor="let menu of notifationMenu" [class.active]="selectedMenu === menu.name" (click)="onMenuClick(menu)">
+      <a routerLink="{{ menu.url }}">
+        <span><img src="../../assets/images/icons/{{ menu.icon }}" class="menu-icon"/></span>
+        {{ menu.name }}
+      </a>
+    </li>
+  </ul>
