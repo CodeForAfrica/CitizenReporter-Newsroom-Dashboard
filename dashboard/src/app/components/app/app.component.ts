@@ -48,7 +48,9 @@ export class AppComponent implements OnInit {
     this._authenticationService.showDashboardEmitter.subscribe(
       (mode: boolean) => {
         if (mode !== null) {
-          this.UserIsAuthorised = mode;
+          setTimeout(() => {
+               this.UserIsAuthorised = mode;
+          });
         }
       }
     );
