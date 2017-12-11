@@ -5,7 +5,7 @@ import {
   Headers,
   Http
 } from '@angular/http';
-import { environment } from './../../environments/environment';
+import { environment } from '../../environments/environment';
 
 export function formatDate(date: Date) {
   let dd: any = date.getDate();
