@@ -23,11 +23,7 @@
           "styles.css"
         ],
         "scripts": [],
-        "environmentSource": "environments/environment.ts",
-        "environments": {
-          "dev": "environments/environment.ts",
-          "prod": "environments/environment.prod.ts"
-        }
+        "environmentSource": "environments/environment.ts"
       }
     ],
     "e2e": {
@@ -59,4 +55,3 @@
       "component": {}
     }
   }
-  

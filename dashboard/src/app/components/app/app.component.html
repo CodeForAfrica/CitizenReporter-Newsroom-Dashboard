@@ -1,17 +1,17 @@
-<div *ngIf="UserIsAuthorised"  id="dashboard">
+<div id="dashboard">
   <!-- Side bar -->
-  <div class="side-toggle bg-blue" [@sideMenuToggle]="menuState">
+  <div *ngIf="UserIsAuthorised" class="side-toggle bg-blue" [@sideMenuToggle]="menuState">
       <div class="app-icon"></div>
       <div class="toggle-btn bg-light-blue" [@toggleIcon]="menuState" (click)="toggleMenu()"></div>
   </div>
 
-  <app-menu [toggleState]="menuState" [@sideMenuToggle]="menuState" class="bg-purple text-white"></app-menu>
+  <app-menu *ngIf="UserIsAuthorised" [toggleState]="menuState" [@sideMenuToggle]="menuState" class="bg-purple text-white"></app-menu>
 
   <!-- Page content -->
   <div id="content">
     <div class="page-content" [class.page-content-wide] = "menuState === 'in'">
 
-      <div id="page-header" class="page-header-narrow" [class.page-header-wide] = "menuState === 'in'">
+      <div *ngIf="UserIsAuthorised" id="page-header" class="page-header-narrow" [class.page-header-wide] = "menuState === 'in'">
         <app-page-header></app-page-header>
       </div>
 
@@ -19,10 +19,5 @@
         <router-outlet></router-outlet>
       </div>
     </div>
-  </div>
-</div>
-<div *ngIf="!UserIsAuthorised" id="login-display">
-  <div class="main-content">
-    <router-outlet></router-outlet>
   </div>
 </div>
